@@ -1,4 +1,11 @@
-export default [
+type Email = {
+  id:number;
+  sender:string;
+  title:string;
+  starred:boolean;
+  read:boolean;
+}
+const emails:Email[] = [
   {
     id: 1,
     sender: `Zoom`,
@@ -35,3 +42,4 @@ export default [
     read: false
   }
 ]
+export default emails;
