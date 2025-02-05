@@ -29,7 +29,7 @@ function EmailList(props){
             <ul>
             {filteredEmails.map((email, index) => (
                //email component here
-               <EmailItem key={index} setEmails={setEmails} email={email} toggleRead={toggleRead} toggleStar={toggleStar}/>
+               <EmailItem key={index} setEmails={setEmails} email={email} toggleRead={toggleRead} toggleStar={toggleStar} setOpenEmail={props.setOpenEmail}/>
              ))}
             </ul>
         </main>
