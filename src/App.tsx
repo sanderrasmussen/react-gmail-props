@@ -4,7 +4,8 @@ import initialEmails from './data/emails'
 import EmailList from './components/emails'
 import './styles/App.css'
 import Header from './components/header'
-import Navbar from './components/navbar';
+import Navbar from './components/navbar'
+import EmailView from './components/emailView';
 
 const getReadEmails = emails => emails.filter(email => !email.read)
 
@@ -30,8 +31,15 @@ function App() {
   return (
     <div className="app">
       <Header></Header>
-      <Navbar currentTab={currentTab} setCurrentTab={setCurrentTab} unreadEmails={unreadEmails} starredEmails={starredEmails} hideRead={hideRead}  />
-      <EmailList filteredEmails={filteredEmails} setEmails= {setEmails} setOpenEmail={setOpenEmail}/>
+      <Navbar currentTab={currentTab} setCurrentTab={setCurrentTab} unreadEmails={unreadEmails} starredEmails={starredEmails} setHideRead={setHideRead}  />
+      {openEmail ==null ?( 
+                  <EmailList filteredEmails={filteredEmails} setEmails= {setEmails} setOpenEmail={setOpenEmail}/>
+      ): (
+
+        <EmailView openEmail={openEmail} goBack={() =>setOpenEmail(null)} ></EmailView>
+      )}
+ 
+
     </div>
   )
 }

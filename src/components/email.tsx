@@ -9,7 +9,7 @@ function EmailItem(props){
         <li
         key={index}
         className={`email ${email.read ? 'read' : 'unread'}`}
-        onClick={props.setOpenEmail(email)}
+        onClick={() => props.setOpenEmail(email)}
         >
             <div className="select">
                 <input

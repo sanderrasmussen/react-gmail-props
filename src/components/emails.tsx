@@ -22,14 +22,20 @@ function EmailList(props){
 
     const filteredEmails = props.filteredEmails;
     let setEmails = props.setEmails;
-
+    
 
     return (
         <main className="emails">
             <ul>
             {filteredEmails.map((email, index) => (
                //email component here
-               <EmailItem key={index} setEmails={setEmails} email={email} toggleRead={toggleRead} toggleStar={toggleStar} setOpenEmail={props.setOpenEmail}/>
+               <EmailItem
+                setOpenEmail={ props.setOpenEmail} 
+                key={index}
+                setEmails={setEmails} 
+                email={email} 
+                toggleRead={toggleRead} 
+                toggleStar={toggleStar}/>
              ))}
             </ul>
         </main>
